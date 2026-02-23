@@ -1,0 +1,11 @@
+{
+    "name": "ClientMasterNew",
+    "alias": "clientmasternew",
+    "description": "Client Master module - manage client records with full CRUD, addresses, directors, banking, and audit trail",
+    "keywords": ["client", "master", "crud", "management"],
+    "priority": 0,
+    "providers": [
+        "Modules\\ClientMasterNew\\Providers\\ClientMasterNewServiceProvider"
+    ],
+    "files": []
+}
