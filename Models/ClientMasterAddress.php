@@ -9,14 +9,7 @@ class ClientMasterAddress extends Model
     protected $table = 'client_master_addresses';
 
     protected $fillable = [
-        'client_id',
-        'address_id',
-        'address_type_id',
-        'is_default',
-    ];
-
-    protected $casts = [
-        'is_default' => 'boolean',
+        'client_id', 'address_id', 'address_type', 'is_checked', 'is_default'
     ];
 
     public function client()
@@ -24,8 +17,17 @@ class ClientMasterAddress extends Model
         return $this->belongsTo(ClientMaster::class, 'client_id', 'client_id');
     }
 
+    /**
+     * Get the address from the addresses module
+     * Note: This assumes the mod_addresses_addresses table exists
+     */
     public function address()
     {
-        return $this->belongsTo(\App\Models\Address::class, 'address_id');
+        return $this->belongsTo(Address::class, 'address_id', 'id');
+    }
+
+    public function address_type()
+    {
+        return $this->belongsTo(CimsAddressType::class, 'address_type_id', 'id');
     }
 }

@@ -10,16 +10,12 @@ class ClientMasterAudit extends Model
     protected $primaryKey = 'audit_id';
 
     protected $fillable = [
-        'client_id',
-        'user_id',
-        'action',
-        'old_values',
-        'new_values',
+        'client_id', 'user_id', 'action', 'old_values', 'new_values'
     ];
 
     protected $casts = [
         'old_values' => 'array',
-        'new_values' => 'array',
+        'new_values' => 'array'
     ];
 
     public function client()
@@ -29,6 +25,6 @@ class ClientMasterAudit extends Model
 
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class, 'user_id');
+        return $this->belongsTo(\App\Models\User::class, 'user_id', 'id');
     }
 }
