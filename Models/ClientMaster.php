@@ -2,10 +2,6 @@
 
 namespace Modules\ClientMasterNew\Models;
 
-use App\Models\ClientMasterAddress;
-use App\Models\ClientMasterAudit;
-use App\Models\ClientMasterBank;
-use App\Models\ClientMasterDirector;
 use App\Models\CompanyType;
 use App\Models\Document;
 use Illuminate\Database\Eloquent\Model;
